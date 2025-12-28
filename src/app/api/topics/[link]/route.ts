@@ -4,12 +4,13 @@ import Topic from '@/models/Topic'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { link: string } }
+  { params }: { params: Promise<{ link: string }> }
 ) {
   try {
+    const { link } = await params
     await dbConnect()
 
-    const topic = await Topic.findOne({ shareableLink: params.link })
+    const topic = await Topic.findOne({ shareableLink: link })
 
     if (!topic) {
       return NextResponse.json(
