@@ -14,7 +14,7 @@ A web application for collecting video testimonials from customers. Built with N
 
 ## Tech Stack
 
-- **Framework**: Next.js 14+ with App Router
+- **Framework**: Next.js 16+ with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Authentication**: NextAuth.js
